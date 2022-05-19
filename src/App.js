@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Header from './components/Header';
 import Login from './components/Login';
 import RequireAuth from './components/RequireAuth';
 import TodoApp from './components/TodoApp';
@@ -7,6 +8,7 @@ import TodoApp from './components/TodoApp';
 function App() {
   return (
     <div className="">
+      <Header></Header>
       <Routes>
         <Route path='/' element={<RequireAuth>
           <TodoApp></TodoApp>
