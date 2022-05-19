@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const TodoApp = () => {
    const [users, setUsers] = useState([]);
     useEffect(()=> {
-        fetch('http://localhost:5000/users')
+        fetch('https://morning-plateau-69723.herokuapp.com/users')
         .then(res => res.json())
         .then(data => setUsers(data))
     },[users]);
@@ -15,7 +15,7 @@ const TodoApp = () => {
         const name = event.target.name.value;
         const description = event.target.description.value;
         const user = {name, description}
-        fetch('http://localhost:5000/user', {
+        fetch('https://morning-plateau-69723.herokuapp.com/user', {
             method: 'POST',
             headers: {
                 "content-type": "application/json",
@@ -29,7 +29,7 @@ const TodoApp = () => {
     }
 
     const handleDelete= id => {
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://morning-plateau-69723.herokuapp.com/users/${id}`, {
             method: "DELETE",
         })
         .then(res => res.json())
